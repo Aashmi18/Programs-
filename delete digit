@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        System.out.print("Enter digit to delete: ");
+        int del = sc.nextInt();
+
+        int result = 0, place = 1;
+
+        while (num > 0) {
+            int digit = num % 10;
+            if (digit != del) {
+                result = digit * place + result;
+                place *= 10;
+            }
+            num /= 10;
+        }
+
+        System.out.println("Result: " + result);
+        sc.close();
+    }
+}
