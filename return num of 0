@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int n = new Scanner(System.in).nextInt();
+        int count = 0, temp = Math.abs(n);
+
+        if (temp == 0) {
+            System.out.println(1);
+            return;
+        }
+
+        while (temp > 0) {
+            if (temp % 10 == 0) count++;
+            temp /= 10;
+        }
+
+        System.out.println(count);
+    }
+}
